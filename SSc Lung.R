@@ -15,17 +15,7 @@ ssc4 <- CreateSeuratObject(counts=ssc4.data, project="ssc4", min.cells=3, min.fe
 ssc5.data <- Read10X_h5("H:/My Documents/GSE212109_SScLung/GSM6509497_SC335_ssc5_raw_feature_bc_matrix.h5")
 ssc5 <- CreateSeuratObject(counts=ssc5.data, project="ssc5", min.cells=3, min.features = 200) 
 
-ssc1$condition="SSc"
-ssc2$condition="SSc"
-ssc3$condition="SSc"
-ssc4$condition="SSc"
-ssc5$condition="SSc"
-
-ssc1[["percent.mt"]] <- PercentageFeatureSet(object = ssc1, pattern = "^MT-")
-ssc2[["percent.mt"]] <- PercentageFeatureSet(object = ssc2, pattern = "^MT-")
-ssc3[["percent.mt"]] <- PercentageFeatureSet(object = ssc3, pattern = "^MT-")
-ssc4[["percent.mt"]] <- PercentageFeatureSet(object = ssc4, pattern = "^MT-")
-ssc5[["percent.mt"]] <- PercentageFeatureSet(object = ssc5, pattern = "^MT-")
+ssc[["percent.mt"]] <- PercentageFeatureSet(object = ssc, pattern = "^MT-")
 
 rm(ssc1.data, ssc2.data, ssc3.data, ssc4.data, ssc5.data)
 gc()
